@@ -1,0 +1,42 @@
+<script src="/modules/formulaire/js/contact.js"></script>
+<script src="/modules/formulaire/js/scriptContact.js"></script>
+<?php
+$url = "/CtrlForm/enregistrerFormulaire";
+if ($contact) {
+    $url = "/CtrlForm/modifierFormulaire/{$contact[0]['id']}";
+}
+?>
+
+<div class="container">
+    <h2>Formulaire de Contact</h2>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6 col-lg-offset-1">
+            <form action="<?= $url ?>" method="post" id="formulaire">
+                <div class="form-group">
+                    <label class="control-label" for="nom">Nom</label>
+                    <input value="<?= ($contact) ? $contact[0]['nom'] : '' ?>" type="text" class="form-control" placeholder="Entrez votre nom" name="nom" id="nom">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="prenom">Prénom</label>
+                    <input value="<?= ($contact) ? $contact[0]['prenom'] : '' ?>" type="text" class="form-control" placeholder="Entrez votre prénom" name="prenom" id="prenom">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="tel">Tel</label>
+                    <input value="<?= ($contact) ? $contact[0]['telephone'] : '' ?>" type="text" class="form-control" placeholder="Entrez votre téléphone" name="tel" id="tel">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Email</label>
+                    <input value="<?= ($contact) ? $contact[0]['email'] : '' ?>" type="text" class="form-control" placeholder="Entrez votre email" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="message">Messages</label>
+                    <textarea class="form-control" placeholder="Entrez votre message" name="message" id="message"><?= ($contact) ? $contact[0]['message'] : '' ?></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" type="reset">Annuler</button>
+                    <button class="btn btn-success" type="submit"><?= ($contact) ? 'Modifier' : 'Enregistrer' ?></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

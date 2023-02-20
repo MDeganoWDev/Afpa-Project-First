@@ -1,0 +1,14 @@
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="/CtrlUser/seDeconnecter"><span class="glyphicon glyphicon-log-out"></span> <?= Session::getPseudo() ?></a></li>
+    <li><a href="galerieCulture.html">Galerie</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+        aria-expanded="false">admin <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/CtrlForm/afficherContacts">liste des contacts</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="/CtrlUser/addUserAdmin">Créer un utilisateur</a></li>
+        <li><a href="/CtrlUser/afficherUsers">Liste des utilisateurs</a></li>
+      </ul>
+    </li>
+  </ul>

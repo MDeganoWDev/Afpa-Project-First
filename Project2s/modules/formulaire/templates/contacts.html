@@ -1,0 +1,26 @@
+<h2 class="<?= ($status == 2) ? "text-success" : (($status==3)?"text-danger":"") ?>">
+
+    <?= $message ?>
+
+</h2>
+<table class="table table-bordered">
+    <tr>
+        <th><?= Message::getMessage('Nom')?></th>
+        <th><?= Message::getMessage('Prenom')?></th>
+        <th><?= Message::getMessage('Telephone')?></th>
+        <th><?= Message::getMessage('Email')?></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <?php foreach($contacts as $contact) : ?>
+    <tr>
+        <td><?= $contact['nom'] ?></td>
+        <td><?= $contact['prenom'] ?></td>
+        <td><?= $contact['telephone'] ?></td>
+        <td><?= $contact['email'] ?></td>
+        <td><a title="Editer" class="btn btn-info btn-xs" href="/CtrlForm/editContact/<?= $contact['id'] ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+        <td><a title="Supprimer" class="btn btn-danger btn-xs" href="/CtrlForm/deleteContact/<?= $contact['id'] ?>"><span class="glyphicon glyphicon-trash"></span></a></td>
+    </tr>
+
+    <?php endforeach ?>
+</table>

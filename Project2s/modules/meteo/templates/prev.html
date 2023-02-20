@@ -1,0 +1,24 @@
+<h1><?= $data['city_info']['name'] ?></h1>
+<h2><?= $data['current_condition']['date'] ?></h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Jour</th>
+            <th>Icône</th>
+            <th>Cond.</th>
+            <th>Tmin</th>
+            <th>Tmax</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php for ($i = 0; $i < 5; $i++) : ?>
+            <tr>
+                <td> <?= $data['fcst_day_' . $i]['day_long'] ?></td>
+                <td><img src='<?= $data['fcst_day_' . $i]['icon'] ?>'/></td>
+                <td> <?= $data['fcst_day_' . $i]['condition'] ?></td>
+                <td> <?= $data['fcst_day_' . $i]['tmin'] ?>°C</td>
+                <td> <?= $data['fcst_day_' . $i]['tmax'] ?>°C</td>
+            </tr>
+        <?php endfor ?>
+    </tbody>
+</table>

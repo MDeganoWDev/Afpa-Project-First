@@ -1,0 +1,51 @@
+
+
+<h2 class="<?= ($status == 2) ? " text-success" : (($status==3)?"text-danger":"") ?>">
+
+    <?= $message ?>
+
+</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            <?= Message::getMessage('Pseudo')?>
+        </th>
+        <th>
+            <?= Message::getMessage('Login')?>
+        </th>
+        <th>
+            <?= Message::getMessage('Droit')?>
+        </th>
+        <th></th>
+        <th></th>
+        
+    </tr>
+    <?php foreach($users as $user) : ?>
+    <tr>
+        <form action="/CtrlUser/editUser" method="post" id="editUserForm">
+            <td>
+                
+                <input type="text" class="form-control" value="<?= $user['pseudo'] ?>" name="pseudo" id="pseudo">
+            </td>
+            <td>
+                
+                <input type="text" class="form-control" value="<?= $user['login'] ?>" name="login" id="login">
+            </td>
+            <td>
+                
+                <input type="text" class="form-control" value="<?= $user['droit'] ?>" name="droit" id="droit">
+            </td>
+            
+                <input type="hidden" id="id" name="id"  value="<?= $user['id'] ?>">
+            
+            
+            <td> <button  class="btn btn-info btn-xs" type="submit">edit</button></td>
+           
+          
+            <td><a title="Supprimer" class="btn btn-danger btn-xs" href="/CtrlUser/deleteUser/<?= $user['id'] ?>"><span
+                        class="glyphicon glyphicon-trash"></span></a></td>
+        </form>
+    </tr>
+    
+    <?php endforeach ?>
+</table>
