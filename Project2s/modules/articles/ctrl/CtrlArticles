@@ -1,0 +1,21 @@
+<?php
+class ModelArticles{
+
+    private $model;
+    private $vue;
+
+    public function __construct(){
+
+        $this->vue = new VueArticles();
+        $this->model = new ModelArticles();
+    }
+    
+    public function articles(){}
+    public function listeArticles(){}
+    public function newArticle(){}
+    public function saveNewArticle(){}
+    public function editArticle(){}
+    public function saveEditArticle(){}
+    public function removeArticle(){}
+
+}

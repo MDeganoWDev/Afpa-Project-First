@@ -1,0 +1,19 @@
+<?php
+class VueArticles{
+
+    public function __construct(){
+
+    }
+
+    public function afficherArticles(){}
+    public function afficherListeArticles(){}
+    public function formulaireNewArticle(){}
+    public function newArticleOk(){}
+    public function newArticleKo(){}
+    public function formulaireEditArticle(){}
+    public function editArticleOk(){}
+    public function editArticleKo(){}
+    public function removeArticleOk(){}
+    public function removeArticleKo(){}
+
+}
