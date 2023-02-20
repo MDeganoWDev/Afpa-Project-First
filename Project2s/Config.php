@@ -22,7 +22,7 @@ class Config
         'host' => "localhost",
         'user' => "root",
         'pass' => "",
-        'database' => "data_test"
+        'database' => "contact_dwwm11"
     );
 
     static $langue = "fr";
