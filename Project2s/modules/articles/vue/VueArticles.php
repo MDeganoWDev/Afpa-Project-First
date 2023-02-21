@@ -6,8 +6,14 @@ class VueArticles{
     }
 
     public function afficherArticles(){}
-    public function afficherListeArticles(){}
-    public function formulaireNewArticle(){}
+    public function afficherListeArticles(){
+        $partial = "modules/articles/templates/listeArticles.html";
+        include "templates/template.html";
+    }
+    public function formulaireNewArticle(){
+        $partial = "modules/articles/templates/formulaireNewArticle.html";
+        include "templates/template.html";
+    }
     public function newArticleOk(){}
     public function newArticleKo(){}
     public function formulaireEditArticle(){}

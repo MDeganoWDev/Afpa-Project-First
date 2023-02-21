@@ -5,6 +5,7 @@ class Config
         "modules/formulaire",
         "modules/meteo",
         "modules/user",
+        "modules/articles",
         "dao",
         "system",
         "langues",

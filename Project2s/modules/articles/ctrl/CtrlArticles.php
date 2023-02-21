@@ -1,5 +1,5 @@
 <?php
-class ModelArticles{
+class CtrlArticles{
 
     private $model;
     private $vue;
@@ -12,8 +12,15 @@ class ModelArticles{
     
     public function articles(){}
     public function listeArticles(){}
-    public function newArticle(){}
-    public function saveNewArticle(){}
+    public function newArticle()
+    {
+        $this->vue->formulaireNewArticle();
+    }
+    public function saveNewArticle()
+    {
+       $this->model->createArticle($_POST);
+       $this->vue->listeArticles();
+    }
     public function editArticle(){}
     public function saveEditArticle(){}
     public function removeArticle(){}
