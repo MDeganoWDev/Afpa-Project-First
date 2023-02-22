@@ -14,21 +14,34 @@ class CtrlArticles
 
     public function articles()
     {
-        $this->vue->afficherArticles($this->model->selectAllArticles());
+        @$result = $this->model->selectAllArticles();
+        if ($result) {
+            $this->vue->afficherArticles($result);
+        } else {
+            $this->vue->afficherError("Erreur de serveur");
+        }
     }
     public function selectedArticle($id)
     {
-        $articles = $this->model->selectAllArticles();
-        $thisArticle = $this->model->selectArticle($id);
-        $this->vue->afficherThisArticles($articles, $thisArticle);
+        @$articles = $this->model->selectAllArticles();
+        @$thisArticle = $this->model->selectArticle($id);
+        if ($articles || $thisArticle) {
+            $this->vue->afficherThisArticles($articles, $thisArticle);
+        } else {
+            $this->vue->afficherError("Erreur serveur");
+        }
     }
     public function listeArticles()
     {
-        if (Session::getDroit() == "admin") {
-            $result = $this->model->selectAllArticles();
-            $this->vue->afficherListeArticles($result, "");
+        @$result = $this->model->selectAllArticles();
+        if ($result) {
+            if (Session::getDroit() == "admin") {
+                $this->vue->afficherListeArticles($result, "");
+            } else {
+                $this->vue->afficherDroitsInsuffisants();
+            }
         } else {
-            $this->vue->afficherDroitsInsuffisants();
+            $this->vue->afficherError("Erreur serveur");
         }
     }
     public function newArticle()
@@ -51,7 +64,7 @@ class CtrlArticles
                     $this->vue->afficherDroitsInsuffisants();
                 }
             } else {
-                $this->vue->afficherError("Erreur de serveur");
+                $this->vue->afficherError("Erreur serveur");
             }
         } else {
             $this->vue->afficherError("Erreur de traitement de formulaire");
@@ -59,30 +72,47 @@ class CtrlArticles
     }
     public function editArticle($id)
     {
-        if (Session::getDroit() == "admin") {
-            $result = $this->model->selectArticle($id);
-            $this->vue->formulaireEditArticle($result);
+        @$result = $this->model->selectArticle($id);
+        if ($result) {
+            if (Session::getDroit() == "admin") {
+                $this->vue->formulaireEditArticle($result);
+            } else {
+                $this->vue->afficherDroitsInsuffisants();
+            }
         } else {
-            $this->vue->afficherDroitsInsuffisants();
+            $this->vue->afficherError("Erreur serveur");
         }
     }
     public function saveEditArticle($id)
     {
-        if (Session::getDroit() == "admin") {
-            $this->model->updateArticle($_POST, $id);
-            $this->vue->afficherListeArticles($this->model->selectAllArticles(), "Edition réussie");
+        if (isset($_POST)) {
+            @$result = $this->model->updateArticle($_POST, $id);
+            if ($result) {
+                if (Session::getDroit() == "admin") {
+                    $this->model->updateArticle($_POST, $id);
+                    $this->vue->afficherListeArticles($this->model->selectAllArticles(), "Edition réussie");
+                } else {
+                    $this->vue->afficherDroitsInsuffisants();
+                }
+            } else {
+                $this->vue->afficherError("Erreur serveur");
+            }
         } else {
-            $this->vue->afficherDroitsInsuffisants();
+            $this->vue->afficherError("Erreur de traitement de formulaire");
         }
     }
     public function removeArticle($id)
     {
-        if (Session::getDroit() == "admin") {
-            $this->model->deleteArticle($id);
-            $this->vue->afficherListeArticles($this->model->selectAllArticles(), "Suppression réussie");
+        @$result = $this->model->deleteArticle($id);
+        if ($result) {
+            if (Session::getDroit() == "admin") {
+                $this->model->deleteArticle($id);
+                $this->vue->afficherListeArticles($this->model->selectAllArticles(), "Suppression réussie");
+            } else {
+                $this->vue->afficherDroitsInsuffisants();
+            }
         } else {
-            $this->vue->afficherDroitsInsuffisants();
+            $this->vue->afficherError("Erreur serveur");
         }
     }
-
 }
