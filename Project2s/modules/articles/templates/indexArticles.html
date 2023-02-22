@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="./modules/articles/css/indexArticles.css">
+<style>
+    #container {
+        display: flex;
+        width: 100%;
+    }
+
+    #container #sideContainer {
+        margin-left: -28%;
+        margin-right: 20px;
+        max-width: 150px;
+    }
+
+    #container #sideContainer .index a {
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: left;
+        text-overflow: ellipsis;
+        overflow:hidden ;
+    }
+
+    #container #mainContainer {
+        width: 100vw;
+        margin-left: 50px;
+        margin-right: -500px;
+        overflow: visible;
+        border-radius: 50px;
+        border: 2px solid black;
+        padding-bottom: 20px;
+    }
+
+    #container #mainContainer h1 {
+        text-align: center;
+    }
+
+    #container #mainContainer #text {
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: left;
+    }
+
+    #container #mainContainer #autor {
+        margin-right: 5%;
+        text-align: right;
+    }
+</style>
+<div id="container">
+
+    <div id="sideContainer">
+        <div class="index">
+            <?php foreach($articles as $article) : ?>
+            <?php if($article['status'] == 1) : ?>
+            <a title="<?= $article['titre'] ?>" class="btn btn-info btn-xs" href="/CtrlArticles/selectedArticle/<?= $article['id'] ?>">
+                <?= $article['titre'] ?>
+            </a>
+            <?php endif ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+
+    <div id="mainContainer">
+        <h1>
+            <?= (isset($thisArticle)) ? $thisArticle[0]['titre'] : '' ?>
+        </h1>
+        <br>
+        <div id="text">
+            <?= (isset($thisArticle)) ? $thisArticle[0]['contenu'] : '' ?>
+        </div>
+        <br>
+        <div id="autor">
+            <?= (isset($thisArticle)) ? $thisArticle[0]['dateCreation'] : '' ?>
+            <?= (isset($thisArticle)) ? $thisArticle[0]['auteur'] : '' ?>
+        </div>
+    </div>
+
+</div>

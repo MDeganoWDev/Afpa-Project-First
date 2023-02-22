@@ -5,18 +5,43 @@ class VueArticles{
 
     }
 
-    public function afficherArticles(){}
-    public function afficherListeArticles(){
+    public function afficherArticles($articles)
+    {
+        $partial = "modules/articles/templates/indexArticles.html";
+        include "templates/template.html";
+    }
+    public function afficherThisArticles($articles, $thisArticle)
+    {
+        $partial = "modules/articles/templates/indexArticles.html";
+        include "templates/template.html";
+    }
+    public function afficherListeArticles($articles, $text)
+    {
         $partial = "modules/articles/templates/listeArticles.html";
         include "templates/template.html";
     }
-    public function formulaireNewArticle(){
+    public function formulaireNewArticle()
+    {
         $partial = "modules/articles/templates/formulaireNewArticle.html";
+        include "templates/template.html";
+    }
+    public function formulaireEditArticle($articles)
+    {
+        $partial = "modules/articles/templates/formulaireNewArticle.html";
+        include "templates/template.html";
+    }
+    public function afficherDroitsInsuffisants()
+    {
+        $partial = "templates/droitsInsuffisants.html";
+        include "templates/template.html";
+    }
+    public function afficherError($text)
+    {
+        $partial = "modules/articles/templates/errorServeur.html";
         include "templates/template.html";
     }
     public function newArticleOk(){}
     public function newArticleKo(){}
-    public function formulaireEditArticle(){}
     public function editArticleOk(){}
     public function editArticleKo(){}
     public function removeArticleOk(){}

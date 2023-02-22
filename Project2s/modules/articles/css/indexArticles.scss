@@ -1,0 +1,13 @@
+#container {
+    display: flex;
+
+    #sideContainer {
+        background-color: red;
+        .index {
+        }
+    }
+    
+    #mainContainer {
+        background-color: aqua;
+    }
+}

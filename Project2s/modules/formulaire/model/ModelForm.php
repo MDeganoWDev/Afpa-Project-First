@@ -10,7 +10,7 @@ class ModelForm
 
     public function insert($data)
     {
-        $sql = "INSERT INTO `contact` (`id`, `nom`, `prenom`, `telephone`, `email`, `message`) VALUES (NULL, '{$data['nom']}', '{$data['prenom']}', '{$data['tel']}', '{$data['email']}', '{$data['message']}');";
+        $sql = "INSERT INTO `contact` (`id`, `nom`, `prenom`, `tel`, `email`, `message`) VALUES (NULL, '{$data['nom']}', '{$data['prenom']}', '{$data['tel']}', '{$data['email']}', '{$data['message']}');";
         $result = DAO_MySQLi::requete($sql);
         return $result;
     }
@@ -36,7 +36,7 @@ class ModelForm
     public function updateContact($data, $id){
 
         // UPDATE `contact` SET `telephone` = '0000000001' WHERE `contact`.`id` = 1;
-        $sql = "UPDATE `contact` SET `nom` = '{$data['nom']}',`prenom` = '{$data['prenom']}',`telephone` = '{$data['tel']}',`email` = '{$data['email']}',`message` = '{$data['message']}' WhERE `contact`.`id` = '{$id}'";
+        $sql = "UPDATE `contact` SET `nom` = '{$data['nom']}',`prenom` = '{$data['prenom']}',`tel` = '{$data['tel']}',`email` = '{$data['email']}',`message` = '{$data['message']}' WhERE `contact`.`id` = '{$id}'";
         $result = DAO_MySQLi::requete($sql);
         return $result;
     }
@@ -49,7 +49,7 @@ class ModelForm
     {
         var_dump($data);
         // $sql = "INSERT INTO `contact` (`id`, `nom`, `prenom`, `telephone`, `email`, `message`) VALUES (NULL, 'Dupond', 'Pierre', '0102030405', 'martin@gmail.com', 'salut');";
-        $sql = "INSERT INTO `contact` (`id`, `nom`, `prenom`, `telephone`, `email`, `message`) VALUES (NULL, '{$data['nom']}', '{$data['prenom']}', '{$data['tel']}', '{$data['email']}', '{$data['message']}');";
+        $sql = "INSERT INTO `contact` (`id`, `nom`, `prenom`, `tel`, `email`, `message`) VALUES (NULL, '{$data['nom']}', '{$data['prenom']}', '{$data['tel']}', '{$data['email']}', '{$data['message']}');";
         echo $sql;
         $result = DAO_MySQLi::requete($sql);
         if ($result == true) {
@@ -58,7 +58,7 @@ class ModelForm
             echo "true attendu >> false reçu : KO<br/>";
         }
 
-        $sql = "INSERT INTO `contact` (`id`, `nom`, `prenom`, `telephone`, `email`, `message`, `taille`) VALUES (NULL, '651', '654', true, 'martin@gmail.com', 'salut');";
+        $sql = "INSERT INTO `contact` (`id`, `nom`, `prenom`, `tel`, `email`, `message`, `taille`) VALUES (NULL, '651', '654', true, 'martin@gmail.com', 'salut');";
         $result = DAO_MySQLi::requete($sql);
         if ($result == false) {
             echo "false attendu >> false reçu : ok<br/>";

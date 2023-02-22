@@ -6,6 +6,7 @@ class Config
         "modules/meteo",
         "modules/user",
         "modules/articles",
+        "modules/pi",
         "dao",
         "system",
         "langues",

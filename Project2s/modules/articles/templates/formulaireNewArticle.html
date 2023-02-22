@@ -1,36 +1,41 @@
+<?php
+$url = "/CtrlArticles/saveNewArticle";
+if (isset($articles)) {
+    $url = "/CtrlArticles/saveEditArticle/{$articles[0]['id']}";
+}
+?>
 <div class="container">
-    <h2>Nouvel Article</h2>
+    <h2><?= (isset($articles)) ? "Modifier Article" : "Nouvel Article" ?></h2>
     <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6 col-lg-offset-1">
-            <form action="/CtrlArticles/saveNewArticle" method="post" id="formulaire">
+            <form action="<?= $url ?>" method="post" id="formulaire">
                 <div class="form-group">
                     <label class="control-label" for="status">Statut</label>
                     <select class="form-control" name="status" id="status">
-                        <option selected value="0">Offline</option>
-                        <option value="1">Online</option>
+                        <option value=0 <?= isset($articles) && $articles[0]['status'] == 1 ? '' : 'selected' ?>>Offline</option>
+                        <option value=1 <?= isset($articles) && $articles[0]['status'] == 1 ? 'selected' : '' ?>>Online</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="url">URL</label>
-                    <input type="text" class="form-control" placeholder="Entrez l'URL" name="url" id="url">
+                    <label class="control-label" for="slug">URL</label>
+                    <input required maxlength="25" pattern="^[a-zA-Z0-9_-]+$" value="<?= (isset($articles)) ? $articles[0]['slug'] : '' ?>" type="text" class="form-control" placeholder="Entrez l'URL" name="slug" id="slug">
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="titre">Titre</label>
-                    <input type="text" class="form-control" placeholder="Entrez votre titre" name="titre" id="titre">
+                    <input required maxlength="50" value="<?= (isset($articles)) ? $articles[0]['titre'] : '' ?>" type="text" class="form-control" placeholder="Entrez votre titre" name="titre" id="titre">
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="contenu">Contenu</label>
-                    <textarea class="form-control" placeholder="Entrez votre contenu" name="contenu" id="contenu"></textarea>
+                    <textarea  maxlength="2000" class="form-control" placeholder="Entrez votre contenu" name="contenu"
+                        id="contenu"><?= (isset($articles)) ? $articles[0]['contenu'] : '' ?></textarea>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="auteur">Auteur</label>
-                    <input type="text" class="form-control" placeholder="auteur" name="auteur" id="auteur">
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="date">Date</label>
+                    <input maxlength="50" value="<?= (isset($articles)) ? $articles[0]['auteur'] : '' ?>" type="text" class="form-control" placeholder="auteur" name="auteur" id="auteur">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-default" type="reset">Annuler</button>
-                    <button class="btn btn-success" type="submit">Enregistrer</button>
+                    <button class="btn btn-success" type="submit"><?= (isset($articles)) ? 'Modifier' : 'Enregistrer' ?></button>
                 </div>
             </form>
         </div>

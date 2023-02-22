@@ -9,14 +9,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a style="padding: 0" class="navbar-brand" href="index.html"><img style="width: 80px;" src="/images/logo.jpg" alt="brand" srcset=""></a>
+        <a style="padding: 0" class="navbar-brand" href="/CtrlPi/accueil"><img style="width: 80px;" src="/images/logo.jpg" alt="brand" srcset=""></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="index.html"><?= Message::getMessage('Accueil') ?> <span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="/CtrlPi/accueil"><?= Message::getMessage('Accueil') ?> <span class="sr-only">(current)</span></a></li>
           <li><a href="/CtrlForm/formulaire"><?= Message::getMessage('Formulaire') ?></a></li>
+          <li><a href="/CtrlArticles/articles">Articles</a></li>
         </ul>
         <?php include "modules/meteo/templates/meteo.html" ?>
         <?php include "templates/langues.html" ?>

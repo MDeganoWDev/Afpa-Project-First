@@ -13,10 +13,10 @@ spl_autoload_register(function ($class) {
     }
 });
 
-$c= isset($_GET['c']) ? $_GET['c'] : "CtrlForm";
+$c= isset($_GET['c']) ? $_GET['c'] : "CtrlPi";
 $ctrl = new $c;
 
-$m = isset($_GET['m']) ? $_GET['m'] : "formulaire";
+$m = isset($_GET['m']) ? $_GET['m'] : "accueil";
 
 $a = isset($_GET['a']) ? $_GET['a'] : false;
 if($a){

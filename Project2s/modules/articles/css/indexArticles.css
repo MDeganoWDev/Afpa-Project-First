@@ -1,0 +1,9 @@
+#container {
+  display: flex;
+}
+#container #sideContainer {
+  background-color: red;
+}
+#container #mainContainer {
+  background-color: aqua;
+}
