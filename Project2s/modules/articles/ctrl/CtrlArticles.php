@@ -46,7 +46,7 @@ class CtrlArticles
             if ($result) {
                 if (Session::getDroit() == "admin") {
                     $this->model->createArticle($_POST);
-                    $this->vue->afficherListeArticles($this->model->selectAllArticles());
+                    $this->vue->afficherListeArticles($this->model->selectAllArticles(), "Création réussie");
                 } else {
                     $this->vue->afficherDroitsInsuffisants();
                 }
@@ -70,7 +70,7 @@ class CtrlArticles
     {
         if (Session::getDroit() == "admin") {
             $this->model->updateArticle($_POST, $id);
-            $this->vue->afficherListeArticles($this->model->selectAllArticles(), "Edition reusi");
+            $this->vue->afficherListeArticles($this->model->selectAllArticles(), "Edition réussie");
         } else {
             $this->vue->afficherDroitsInsuffisants();
         }
@@ -79,7 +79,7 @@ class CtrlArticles
     {
         if (Session::getDroit() == "admin") {
             $this->model->deleteArticle($id);
-            $this->vue->afficherListeArticles($this->model->selectAllArticles(), "Suppression reussi");
+            $this->vue->afficherListeArticles($this->model->selectAllArticles(), "Suppression réussie");
         } else {
             $this->vue->afficherDroitsInsuffisants();
         }
