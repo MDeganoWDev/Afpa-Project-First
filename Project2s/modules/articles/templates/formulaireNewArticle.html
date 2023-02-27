@@ -15,7 +15,7 @@ if (isset($articles)) {
                         <option value=0 <?= isset($articles) && $articles[0]['status'] == 1 ? '' : 'selected' ?>>Offline</option>
                         <option value=1 <?= isset($articles) && $articles[0]['status'] == 1 ? 'selected' : '' ?>>Online</option>
                     </select>
-                </div>
+                </div>²
                 <div class="form-group">
                     <label class="control-label" for="slug">URL</label>
                     <input required maxlength="25" pattern="^[a-zA-Z0-9_-]+$" value="<?= (isset($articles)) ? $articles[0]['slug'] : '' ?>" type="text" class="form-control" placeholder="Entrez l'URL" name="slug" id="slug">
