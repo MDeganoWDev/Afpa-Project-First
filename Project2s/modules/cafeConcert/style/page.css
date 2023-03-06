@@ -6,6 +6,7 @@
   box-sizing: border-box;
   background: rgb(251, 218, 190);
   background: linear-gradient(90deg, rgb(251, 218, 190) 0%, rgb(157, 99, 129) 100%);
+  z-index: 0;
 }
 .module .titre {
   position: sticky;
