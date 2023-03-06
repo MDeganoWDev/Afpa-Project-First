@@ -55,20 +55,20 @@ body {
 
                 
             }
-            div.carte_balade{
-                width: 700px;
-                height: 700px;
-                border-radius: 10px;
-                background-color: blue;
-                div#map{
-                    top: 100px;
-                    left: 100px;
-                    width: 500px;
-                    height: 500px;
-                    background-color: #eee;
-                    
-                }
-            }
         }
+    }
+}
+.carte_balade{
+    width: 700px;
+    height: 700px;
+    border-radius: 10px;
+    background-color: blue;
+    div#map{
+        top: 100px;
+        left: 100px;
+        width: 500px;
+        height: 500px;
+        background-color: #eee;
+        
     }
 }

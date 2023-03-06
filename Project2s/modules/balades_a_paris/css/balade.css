@@ -42,13 +42,14 @@ body div.container div.balades div#balade div.img-text div.texte {
 body div.container div.balades div#balade div.img-text a.thumbnail:hover + div.texte {
   visibility: visible;
 }
-body div.container div.balades div.carte_balade {
+
+.carte_balade {
   width: 700px;
   height: 700px;
   border-radius: 10px;
   background-color: blue;
 }
-body div.container div.balades div.carte_balade div#map {
+.carte_balade div#map {
   top: 100px;
   left: 100px;
   width: 500px;
