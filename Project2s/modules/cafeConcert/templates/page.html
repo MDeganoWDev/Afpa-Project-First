@@ -1,0 +1,60 @@
+<!-- PAGE D'ACCUEIL -->
+<script src="../modules/cafeConcert/js/script.js"></script>
+<script src="../modules/cafeConcert/js/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="../modules/cafeConcert/style/page.css">
+<link rel="stylesheet" type="text/css" href="../modules/cafeConcert/style/error.css">
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<!-- Leaflet's JS -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+<div class="module">
+
+    <div class="titre">
+        <h1>Café-Concert Toulouse</h1>
+    </div>
+
+    <section>
+        <div class="cafe-list">
+            <!-- Boucle foreach pour parcourir tous les enregistrements du tableau dans $data["records"] -->
+            <?php foreach ($data["records"] as $index=>$record) : ?>
+            <div class='cafe'>
+                <div class="titre-list">
+                    <h2>
+                        <?= $record['fields']['eq_nom_equipement'] ?>
+                    </h2>
+                    <button class='fleche'>➕</button>
+                </div>
+                <div class="cafe-info">
+                    <p>
+                        <?php if (!isset($record['fields']['numero'])) {
+                            echo "";
+                        } else {
+                            echo $record['fields']['numero'];
+                        } ?>
+                        <?= $record['fields']['lib_off'] ?> </br>
+                        <?= $record['fields']['id_secteur_postal'] ?>
+                        <?= $record['fields']['eq_ville'] ?> </br>
+                        <?php if (!isset($record['fields']['eq_telephone'])) {
+                            echo "";
+                        } else {
+                            echo $record['fields']['eq_telephone'];
+                        } ?> </br>
+                        <?php if (!isset($record['fields']['eq_site_web'])) {
+                            echo "";
+                        } else {
+                            echo $record['fields']['eq_site_web'];
+                        } ?> </br>
+                    </p>
+                </div>
+            </div>
+            <?php endforeach ?>
+        </div>
+
+        <div id="carte">
+            <!-- CARTE LEAFTLET -->
+        </div>
+    </section>
+</div>

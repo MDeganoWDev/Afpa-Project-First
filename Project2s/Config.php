@@ -2,6 +2,7 @@
 class Config
 {
     static $modules = array(
+        "modules/cafeConcert",
         "modules/formulaire",
         "modules/meteo",
         "modules/user",
@@ -23,6 +24,9 @@ class Config
     );
     static $apiVelo = array(
         'url' => "https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=station-velo-toulouse&q=&rows=284"
+    );
+    static $apiCafeConcert = array(
+        'url' => "https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=cafes-concerts&q=&rows=26"
     );
 
     static $bdd = array(
