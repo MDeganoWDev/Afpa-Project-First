@@ -7,6 +7,7 @@ class Config
         "modules/user",
         "modules/articles",
         "modules/pi",
+        "modules/velo",
         "dao",
         "system",
         "langues",
@@ -18,6 +19,10 @@ class Config
 
     static $apiMeteo = array(
         'url' => "https://www.prevision-meteo.ch/services/json/"
+    
+    );
+    static $apiVelo = array(
+        'url' => "https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=station-velo-toulouse&q=&rows=284"
     );
 
     static $bdd = array(

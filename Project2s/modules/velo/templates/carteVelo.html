@@ -1,0 +1,42 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+<!-- liens vers des polices originales -->
+<div id="mdlvelo">
+
+
+    <div id="logo">
+        <img src="../images/logostation.png" alt="">
+    </div>
+
+
+
+    <div id="map">
+        <h1>Carte</h1>
+    </div>
+
+    <div id="affichageresult">
+        <div id="result">
+
+        </div>
+    </div>
+   
+    <div class="stationsVide">
+        <h1>Liste des stations sans bornette</h1>
+    </div>
+    <div id="listenondispo">
+        <?php
+
+            foreach ($data['records'] as $record) {
+        
+                $nbBornette = $record['fields']['nb_bornettes'];
+                $nom = $record['fields']['nom'];
+
+                if ($nbBornette == 0) {
+                    echo "<div class='stationVide'>" . $nom . "</div>";
+                }
+            }
+       
+        ?>
+    </div>
+</div>
