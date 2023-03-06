@@ -1,0 +1,57 @@
+body div.container div.row h2.balades {
+  align-items: center;
+  color: rgb(103, 105, 228);
+}
+body div.container div.row h1.erreur {
+  color: red;
+}
+body div.container div.row div#balade {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(33, 33, 139);
+  min-width: 1000px;
+}
+body div.container div.row div#balade div.img-text {
+  position: relative;
+  margin-left: 25px;
+  cursor: pointer;
+}
+body div.container div.row div#balade div.img-text a.thumbnail {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+body div.container div.row div#balade div.img-text a.thumbnail img {
+  width: 290px;
+  height: 290px;
+}
+body div.container div.row div#balade div.img-text div.texte {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  overflow-x: hidden;
+  visibility: hidden;
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 10px;
+  width: 300px;
+  max-height: 300px;
+  z-index: 2;
+}
+body div.container div.row div#balade div.img-text a.thumbnail:hover + div.texte {
+  visibility: visible;
+}
+body div.container div.row div.carte_balade {
+  width: 700px;
+  height: 700px;
+  border-radius: 10px;
+  background-color: blue;
+}
+body div.container div.row div.carte_balade div#map {
+  top: 100px;
+  left: 100px;
+  width: 500px;
+  height: 500px;
+  background-color: #eee;
+}/*# sourceMappingURL=balade.css.map */
