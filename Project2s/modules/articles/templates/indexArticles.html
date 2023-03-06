@@ -1,56 +1,57 @@
-<link rel="stylesheet" href="./modules/articles/css/indexArticles.css">
+<!-- <link rel="stylesheet" href="../modules/articles/css/indexArticles.css"> -->
+
 <style>
-    #container {
+    #containerArticle {
         display: flex;
         width: 100%;
     }
 
-    #container #sideContainer {
-        margin-left: -28%;
-        margin-right: 20px;
+    #containerArticle #sideContainerArticle {
+        margin-left: -5%;
+        margin-right: 10%;
         max-width: 150px;
     }
 
-    #container #sideContainer .index a {
+    #containerArticle #sideContainerArticle .index a {
         margin-bottom: 5px;
         width: 100%;
         text-align: left;
         text-overflow: ellipsis;
-        overflow:hidden ;
+        overflow: hidden;
     }
 
-    #container #mainContainer {
+    #containerArticle #mainContainerArticle {
         width: 100vw;
-        margin-left: 50px;
-        margin-right: -500px;
         overflow: visible;
         border-radius: 50px;
         border: 2px solid black;
         padding-bottom: 20px;
     }
 
-    #container #mainContainer h1 {
+    #containerArticle #mainContainerArticle h1 {
         text-align: center;
     }
 
-    #container #mainContainer #text {
+    #containerArticle #mainContainerArticle #text {
         margin-left: 5%;
         margin-right: 5%;
         text-align: left;
     }
 
-    #container #mainContainer #autor {
+    #containerArticle #mainContainerArticle #autor {
         margin-right: 5%;
         text-align: right;
     }
 </style>
-<div id="container">
 
-    <div id="sideContainer">
+<div id="containerArticle">
+
+    <div id="sideContainerArticle">
         <div class="index">
             <?php foreach($articles as $article) : ?>
             <?php if($article['status'] == 1) : ?>
-            <a title="<?= $article['titre'] ?>" class="btn btn-info btn-xs" href="/CtrlArticles/selectedArticle/<?= $article['id'] ?>">
+            <a title="<?= $article['titre'] ?>" class="btn btn-info btn-xs"
+                href="/CtrlArticles/selectedArticle/<?= $article['slug'] ?>">
                 <?= $article['titre'] ?>
             </a>
             <?php endif ?>
@@ -58,7 +59,7 @@
         </div>
     </div>
 
-    <div id="mainContainer">
+    <div id="mainContainerArticle">
         <h1>
             <?= (isset($thisArticle)) ? $thisArticle[0]['titre'] : '' ?>
         </h1>

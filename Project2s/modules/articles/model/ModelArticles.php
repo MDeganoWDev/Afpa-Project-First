@@ -13,16 +13,19 @@ class ModelArticles
         $result = DAO_MySQLi::requete($sql);
         return $result;
     }
-    public function selectArticle($id)
+    public function selectArticle($slug)
     {
-        $sql = "SELECT * FROM `articles` WHERE `articles`.`id` = {$id}";
+        $sql = "SELECT * FROM `articles` WHERE `articles`.`slug` = '{$slug}'";
         $result = DAO_MySQLi::requete($sql);
         return $result;
     }
     public function createArticle($data)
     {
         $datej = date('Y-m-d');
-        $sql = "INSERT INTO `articles` (`status`, `slug`, `titre`, `contenu`, `auteur`, `dateCreation`) VALUES ('{$data['status']}', '{$data['slug']}', '{$data['titre']}', '{$data['contenu']}', '{$data['auteur']}', '{$datej}');";
+        $titre= addslashes($data['titre']);
+        $contenu = addslashes($data['contenu']);
+        $auteur= addslashes($data['auteur']);
+        $sql = "INSERT INTO `articles` (`status`, `slug`, `titre`, `contenu`, `auteur`, `dateCreation`) VALUES ('{$data['status']}', '{$data['slug']}', '{$titre}', '{$contenu}', '{$auteur}', '{$datej}');";
         $result = DAO_MySQLi::requete($sql);
         return $result;
     }

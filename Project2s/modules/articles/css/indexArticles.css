@@ -1,9 +1,41 @@
-#container {
+#containerArticle {
   display: flex;
+  width: 100%;
 }
-#container #sideContainer {
-  background-color: red;
+
+#containerArticle #sideContainerArticle {
+  margin-left: -5%;
+  margin-right: 10%;
+  max-width: 150px;
 }
-#container #mainContainer {
-  background-color: aqua;
-}/*# sourceMappingURL=indexArticles.css.map */
+
+#containerArticle #sideContainerArticle .index a {
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow:hidden ;
+}
+
+#containerArticle #mainContainerArticle {
+  width: 100vw;
+  overflow: visible;
+  border-radius: 50px;
+  border: 2px solid black;
+  padding-bottom: 20px;
+}
+
+#containerArticle #mainContainerArticle h1 {
+  text-align: center;
+}
+
+#containerArticle #mainContainerArticle #text {
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: left;
+}
+
+#containerArticle #mainContainerArticle #autor {
+  margin-right: 5%;
+  text-align: right;
+}

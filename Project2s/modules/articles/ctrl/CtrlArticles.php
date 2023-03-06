@@ -21,10 +21,10 @@ class CtrlArticles
             $this->vue->afficherError("Erreur de serveur");
         }
     }
-    public function selectedArticle($id)
+    public function selectedArticle($slug)
     {
         @$articles = $this->model->selectAllArticles();
-        @$thisArticle = $this->model->selectArticle($id);
+        @$thisArticle = $this->model->selectArticle($slug);
         if ($articles || $thisArticle) {
             $this->vue->afficherThisArticles($articles, $thisArticle);
         } else {
