@@ -1,0 +1,141 @@
+$blanc: white;
+$rouge: rgb(160, 0, 0);
+$noir: black;
+
+body {
+
+  background-color: $blanc;
+  width: auto;
+  margin-top: 2%;
+  padding: auto;
+
+  #mdlvelo {
+    background-color: $rouge;
+    width: 90%;
+    display: block;
+    margin: auto;
+    overflow: hidden;
+
+    #logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+
+        width: 20vw;
+        height: 20vh;
+        padding: 1%;
+        mix-blend-mode: darken;
+      }
+    }
+
+
+
+    #map {
+      width: 98%;
+      height: 60vh;
+      float: left;
+      margin: 1%;
+      border-radius: 20px;
+
+    }
+
+    #search {
+      width: 45%;
+      height: 15vh;
+      float: right;
+      margin: 1%;
+
+      form {
+        input.search {
+          width: 65%;
+        }
+      }
+    }
+
+    #affichageresult {
+      display: none;
+      min-width: 30%;
+      width: fit-content;
+      float: right;
+      background-color: $noir;
+      color: $blanc;
+      padding: 1%;
+      margin: 1% 1% 0 0;
+      border-radius: 20px;
+
+      #result {
+        margin: 1%;
+        white-space: nowrap;
+        font-family: 'Tilt Neon', cursive;
+
+        h1 {
+          font-size: 1em;
+        }
+      }
+    }
+
+
+
+    .stationsVide {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      font-size: x-small;
+      margin: 1px 3px 1px 60px;
+      padding: 1px;
+      color: $noir;
+
+      h1 {
+
+        font-family: 'Tilt Neon', cursive;
+        text-align: center;
+        font-size: 3em;
+      }
+    }
+  }
+
+  #listenondispo {
+    display: flex;
+    flex-direction: row;
+    animation: slidein 30s linear infinite;
+    margin: 0%;
+    width: fit-content;
+
+    .petit_velo_pour_benjamin {
+      display: flex;
+      margin-right: 20px;
+    }
+
+    .stationVide {
+      background-color: $noir;
+      color: $blanc;
+      padding: 1% 3% 1% 3%;
+      margin: 5px 0 5px 0;
+      text-align: center;
+      border: solid $noir 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap; // Ajout de la propriété CSS pour empêcher le texte de retourner à la ligne
+    }
+  }
+
+  @keyframes slidein {
+    from {
+      transform: translateX(80%);
+
+    }
+
+    to {
+      transform: translateX(-240%);
+    }
+  }
+}
+.row{
+  width:70%;
+}

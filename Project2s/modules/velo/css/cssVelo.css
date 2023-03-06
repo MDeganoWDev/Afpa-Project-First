@@ -1,0 +1,109 @@
+body {
+  background-color: white;
+  width: auto;
+  margin-top: 2%;
+  padding: auto;
+}
+body #mdlvelo {
+  background-color: rgb(160, 0, 0);
+  width: 90%;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+}
+body #mdlvelo #logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #mdlvelo #logo img {
+  width: 20vw;
+  height: 20vh;
+  padding: 1%;
+  mix-blend-mode: darken;
+}
+body #mdlvelo #map {
+  width: 98%;
+  height: 60vh;
+  float: left;
+  margin: 1%;
+  border-radius: 20px;
+}
+body #mdlvelo #search {
+  width: 45%;
+  height: 15vh;
+  float: right;
+  margin: 1%;
+}
+body #mdlvelo #search form input.search {
+  width: 65%;
+}
+body #mdlvelo #affichageresult {
+  display: none;
+  min-width: 30%;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+  background-color: black;
+  color: white;
+  padding: 1%;
+  margin: 1% 1% 0 0;
+  border-radius: 20px;
+}
+body #mdlvelo #affichageresult #result {
+  margin: 1%;
+  white-space: nowrap;
+  font-family: "Tilt Neon", cursive;
+}
+body #mdlvelo #affichageresult #result h1 {
+  font-size: 1em;
+}
+body #mdlvelo .stationsVide {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  font-size: x-small;
+  margin: 1px 3px 1px 60px;
+  padding: 1px;
+  color: black;
+}
+body #mdlvelo .stationsVide h1 {
+  font-family: "Tilt Neon", cursive;
+  text-align: center;
+  font-size: 3em;
+}
+body #listenondispo {
+  display: flex;
+  flex-direction: row;
+  animation: slidein 30s linear infinite;
+  margin: 0%;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body #listenondispo .petit_velo_pour_benjamin {
+  display: flex;
+  margin-right: 20px;
+}
+body #listenondispo .stationVide {
+  background-color: black;
+  color: white;
+  padding: 1% 3% 1% 3%;
+  margin: 5px 0 5px 0;
+  text-align: center;
+  border: solid black 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+@keyframes slidein {
+  from {
+    transform: translateX(80%);
+  }
+  to {
+    transform: translateX(-240%);
+  }
+}/*# sourceMappingURL=cssVelo.css.map */
