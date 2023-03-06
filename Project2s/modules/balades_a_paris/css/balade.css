@@ -1,31 +1,31 @@
-body div.container div.row h2.balades {
+body div.container div.balades h2.balades {
   align-items: center;
   color: rgb(103, 105, 228);
 }
-body div.container div.row h1.erreur {
+body div.container div.balades h1.erreur {
   color: red;
 }
-body div.container div.row div#balade {
+body div.container div.balades div#balade {
   display: flex;
   flex-wrap: wrap;
   background-color: rgb(33, 33, 139);
   min-width: 1000px;
 }
-body div.container div.row div#balade div.img-text {
+body div.container div.balades div#balade div.img-text {
   position: relative;
   margin-left: 25px;
   cursor: pointer;
 }
-body div.container div.row div#balade div.img-text a.thumbnail {
+body div.container div.balades div#balade div.img-text a.thumbnail {
   position: relative;
   width: 300px;
   height: 300px;
 }
-body div.container div.row div#balade div.img-text a.thumbnail img {
+body div.container div.balades div#balade div.img-text a.thumbnail img {
   width: 290px;
   height: 290px;
 }
-body div.container div.row div#balade div.img-text div.texte {
+body div.container div.balades div#balade div.img-text div.texte {
   position: absolute;
   top: 0;
   left: 250px;
@@ -39,16 +39,16 @@ body div.container div.row div#balade div.img-text div.texte {
   max-height: 300px;
   z-index: 2;
 }
-body div.container div.row div#balade div.img-text a.thumbnail:hover + div.texte {
+body div.container div.balades div#balade div.img-text a.thumbnail:hover + div.texte {
   visibility: visible;
 }
-body div.container div.row div.carte_balade {
+body div.container div.balades div.carte_balade {
   width: 700px;
   height: 700px;
   border-radius: 10px;
   background-color: blue;
 }
-body div.container div.row div.carte_balade div#map {
+body div.container div.balades div.carte_balade div#map {
   top: 100px;
   left: 100px;
   width: 500px;
