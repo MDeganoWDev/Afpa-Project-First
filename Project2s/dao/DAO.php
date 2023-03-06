@@ -1,4 +1,5 @@
 <?php
-interface DAO {
+interface DAO
+{
     public static function requete($req);
 }

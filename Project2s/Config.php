@@ -2,6 +2,7 @@
 class Config
 {
     static $modules = array(
+        "modules/cafeConcert",
         "modules/formulaire",
         "modules/meteo",
         "modules/user",
@@ -18,6 +19,9 @@ class Config
 
     static $apiMeteo = array(
         'url' => "https://www.prevision-meteo.ch/services/json/"
+    );
+    static $apiCafeConcert = array(
+        'url' => "https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=cafes-concerts&q=&rows=26"
     );
 
     static $bdd = array(
