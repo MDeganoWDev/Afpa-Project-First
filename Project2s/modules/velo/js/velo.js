@@ -33,7 +33,7 @@ $(document).ready(function () {
         $.each(data.records, function (index, record) {
             //icon personnalisée
             var icon = L.icon({
-                iconUrl: '../images/velo.png',
+                iconUrl: '../modules/velo/images/velo.png',
                 iconSize: [50, 55],
                 popupAnchor: [-3, -76]
             });
