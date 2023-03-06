@@ -5,6 +5,7 @@ class Config
         "modules/cafeConcert",
         "modules/formulaire",
         "modules/meteo",
+        "modules/balades_a_paris",
         "modules/user",
         "modules/articles",
         "modules/pi",
@@ -27,6 +28,10 @@ class Config
     );
     static $apiCafeConcert = array(
         'url' => "https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=cafes-concerts&q=&rows=26"
+    );
+
+    static $apiBalades = array(
+        'url' => "https://opendata.paris.fr/api/records/1.0/search/?dataset=que-faire-a-paris-&q=&rows=20"
     );
 
     static $bdd = array(

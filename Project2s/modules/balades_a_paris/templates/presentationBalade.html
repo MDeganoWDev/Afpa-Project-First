@@ -1,0 +1,22 @@
+<h2 class="balades">Listes des Evénenements</h2>
+
+<div id="balade">
+        <!-- boucle pour ajouter les vignettes des événements -->
+        <?php for($i = 0; $i<20; $i++) { ?>
+        <div class="img-text">
+                <a href="/CtrlBalades/clicBalade" class="thumbnail" id="<?= $i ?>">
+                        <!-- création de chaque img avec en source l'image de la base de données -->
+                        <img src="<?= $event['records'][$i]['fields']['cover_url'] ?>"
+                                data-lat="<?= isset($event['records'][$i]['geometry']['coordinates'][1]) ? $event['records'][$i]['geometry']['coordinates'][1] : 0 ?>"
+                                data-lon="<?= isset($event['records'][$i]['geometry']['coordinates'][0]) ? $event['records'][$i]['geometry']['coordinates'][0] : 0 ?>">
+                </a>
+                <!-- la description correspondant à l'image générée qui ne sera visible qu'au survol de l'image -->
+                <div class="texte scroller">
+                        <?= $event['records'][$i]['fields']['description'] ?>
+                </div>
+        </div>
+        <?php } ?>
+        <!-- div qui contiendra la carte leaflet 
+             et doit se trouver dans plusieurs templates sinon il ne trouve pas l'emplacement -->
+        <div id="map"></div>
+</div>
