@@ -106,4 +106,8 @@ body #listenondispo .stationVide {
   to {
     transform: translateX(-240%);
   }
+}
+
+.row {
+  width: 70%;
 }/*# sourceMappingURL=cssVelo.css.map */
