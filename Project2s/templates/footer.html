@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="../templates/css/footer.css">
+<link rel="stylesheet" href="../../templates/css/footer.css">
+
+<div id="footerItems">
+  <?php foreach(Footer::$footer as $article) : ?>
+  <?php if($article['status'] == 1) : ?>
+  <a class="item" title="<?= $article['titre'] ?>" href="/CtrlArticles/selectedArticle/<?= $article['slug'] ?>">
+    <?= $article['titre'] ?>
+  </a>
+  <?php endif ?>
+  <?php endforeach ?>
+</div>

@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="../templates/css/template.css">
+<link rel="stylesheet" href="../../templates/css/template.css">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
 </head>
 
 <body>
     <?php include "templates/nav.html" ?>
-    <div class="container">
-        <div class="row">
-            </div>
-                <?php include $partial ?>
-            </div>
-        </div>
+    <div id="main">
+        <?php include $partial ?>
     </div>
 
-    <footer style="display:flex; align-self: flex-end; margin-top: 6%;margin-left: 2%;width:90%">
-        <a class='accueil_footer' href="/CtrlPi/mentionLegale">mentions Legales</a>
+    <footer id="footer">
+        <?php include "templates/footer.html" ?>
     </footer>
 
 </body>
-
 
 </html>

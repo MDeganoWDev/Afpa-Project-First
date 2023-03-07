@@ -16,7 +16,7 @@ class CtrlArticles
     {
         @$result = $this->model->selectAllArticles();
         if ($result) {
-            $this->vue->afficherArticles($result);
+            return $result;
         } else {
             $this->vue->afficherError("Erreur de serveur");
         }
@@ -70,9 +70,9 @@ class CtrlArticles
             $this->vue->afficherError("Erreur de traitement de formulaire");
         }
     }
-    public function editArticle($id)
+    public function editArticle($slug)
     {
-        @$result = $this->model->selectArticle($id);
+        @$result = $this->model->selectArticle($slug);
         if ($result) {
             if (Session::getDroit() == "admin") {
                 $this->vue->formulaireEditArticle($result);

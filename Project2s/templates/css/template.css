@@ -1,0 +1,12 @@
+#main {
+  min-height: 77vh;
+}
+#footer {
+  border: 1px solid gray;
+  min-height: 6.1vh;
+  display: flex;
+  align-self: flex-end;
+  margin-top: 6%;
+  width: 100%;
+  background-color: gainsboro;
+}

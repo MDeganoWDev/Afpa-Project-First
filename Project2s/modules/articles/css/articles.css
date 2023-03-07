@@ -1,0 +1,14 @@
+#articleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#articleContainer #articleText {
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-right: 3%;
+  text-align: left;
+}

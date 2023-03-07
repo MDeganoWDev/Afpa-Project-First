@@ -1,0 +1,14 @@
+#footerItems {
+    margin: auto;
+  }
+
+  #footerItems .item {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    color: rgb(73, 73, 73);
+
+  }

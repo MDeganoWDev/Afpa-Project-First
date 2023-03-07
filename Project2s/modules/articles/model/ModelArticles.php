@@ -32,7 +32,10 @@ class ModelArticles
     public function updateArticle($data, $id)
     {
         $datej = date('Y-m-d');
-        $sql = "UPDATE `articles` SET `status` = '{$data['status']}',`slug` = '{$data['slug']}',`titre` = '{$data['titre']}',`contenu` = '{$data['contenu']}',`auteur` = '{$data['auteur']}',`dateCreation` = '{$datej}' WhERE `articles`.`id` = '{$id}'";
+        $titre= addslashes($data['titre']);
+        $contenu = addslashes($data['contenu']);
+        $auteur= addslashes($data['auteur']);
+        $sql = "UPDATE `articles` SET `status` = '{$data['status']}',`slug` = '{$data['slug']}',`titre` = '{$titre}',`contenu` = '{$contenu}',`auteur` = '{$auteur}',`dateCreation` = '{$datej}' WhERE `articles`.`id` = '{$id}'";
         $result = DAO_MySQLi::requete($sql);
         return $result;
     }

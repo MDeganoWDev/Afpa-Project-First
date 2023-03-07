@@ -8,12 +8,12 @@ class Config
         "modules/balades_a_paris",
         "modules/user",
         "modules/articles",
-        "modules/pi",
         "modules/velo",
+        "modules/langue",
         "dao",
         "system",
         "langues",
-        "modules/langue"
+        "",
     );
     static $packages = array(
         "ctrl", "vue", "model", ""

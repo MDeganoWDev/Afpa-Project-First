@@ -5,14 +5,9 @@ class VueArticles{
 
     }
 
-    public function afficherArticles($articles)
-    {
-        $partial = "modules/articles/templates/indexArticles.html";
-        include "templates/template.html";
-    }
     public function afficherThisArticles($articles, $thisArticle)
     {
-        $partial = "modules/articles/templates/indexArticles.html";
+        $partial = "modules/articles/templates/articles.html";
         include "templates/template.html";
     }
     public function afficherListeArticles($articles, $text)

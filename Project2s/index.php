@@ -13,12 +13,14 @@ spl_autoload_register(function ($class) {
     }
 });
 
-$c= isset($_GET['c']) ? $_GET['c'] : "CtrlPi";
+Footer::articlesFooter();
+
+$c= isset($_GET['c']) ? $_GET['c'] : "CtrlArticles";
 $ctrl = new $c;
 
-$m = isset($_GET['m']) ? $_GET['m'] : "accueil";
+$m = isset($_GET['m']) ? $_GET['m'] : "selectedArticle";
 
-$a = isset($_GET['a']) ? $_GET['a'] : false;
+$a = isset($_GET['a']) ? $_GET['a'] : "accueil";
 if($a){
     $ctrl->$m($a);
 }

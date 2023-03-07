@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="../../modules/articles/css/articles.css">
+
+<div id="articleContainer">
+    <h1>
+        <?= (isset($thisArticle)) ? $thisArticle[0]['titre'] : '' ?>
+    </h1>
+    <br>
+    <div id="articleText">
+        <?= (isset($thisArticle)) ? $thisArticle[0]['contenu'] : '' ?>
+    </div>
+</div>
